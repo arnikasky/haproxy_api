@@ -1,10 +1,15 @@
 #Haproxy API
 
-##Requirements:
-- Ruby and Mongo
+##Installation:
+```bash
+$ bundle
+$ rackup
+```
+
+Application will be running on `localhost:9292`.
 
 ##Usage:
-Do a `POST` to `localhost:4567/config` with a JSON such as:
+Do a `POST` to `localhost:9292/config` with a JSON such as:
 ```json
 {
    "config":{
