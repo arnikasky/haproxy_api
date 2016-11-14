@@ -41,3 +41,5 @@ Do a `POST` to `localhost:9292/config` with a JSON such as:
    }
 }
 ```
+
+The result will be in `./template/haproxy.cfg`.

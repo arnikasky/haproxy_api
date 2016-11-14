@@ -10,5 +10,6 @@ post '/config' do
     @config_file = Config.new(@config_file)
     @config_file.save
   end
+  ConfigFileGenerator.new.generate(@config_file)
   @config_file.to_json
 end

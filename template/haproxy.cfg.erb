@@ -3,18 +3,18 @@ defaults
     timeout connect 30s
     timeout client 2h
     timeout server 2h
-<% @config.frontends.each do |frontend| %>
+<% @params.frontends.each do |frontend| -%>
 frontend <%= frontend.name %>
    bind *:80
    mode http
    option http-server-close
    default_backend <%= frontend.default_backend %>
-<% end %>
-<% @config.backends.each do |backend| %>
+<% end -%>
+<% @params.backends.each do |backend| -%>
 backend <%= backend.title %>
    mode http
    option forwardfor
-   <% backend.servers.each do |server| %>
+<% backend.servers.each do |server| -%>
    server <%= server.name %> <%= server.host %>:<%= server.port %> check weight <%= server.weight %>
-   <% end %>
-<% end %>
+<% end -%>
+<% end -%>
