@@ -1,7 +1,11 @@
 require 'sinatra'
 
-get "/" do
+get "/configs" do
   Config.all.to_json
+end
+
+get "/configs/last" do
+  Config.sort(:created_at.desc).first.to_json
 end
 
 post '/config' do
