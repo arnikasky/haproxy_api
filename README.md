@@ -13,6 +13,12 @@ Do a `POST` to `localhost:9292/config` with a JSON such as:
 ```json
 {
    "config":{
+      "frontends":[
+         {
+            "title":"localnodes",
+            "default_backend":"backend"
+         }
+      ],
       "backends":[
          {
             "title":"backend",
